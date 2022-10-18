@@ -17,10 +17,19 @@ class SlideContainer:
             image_id = [i["id"] for i in data["images"] if i["file_name"] == file.name][0]
             self.polygons = [anno for anno in data['annotations'] if anno["image_id"] == image_id]
         self.labels = set([poly["category_id"] for poly in self.polygons])
-        self.labels.discard(self.tissue_classes["Bone"])
-        self.labels.discard(self.tissue_classes["Cartilage"])
+        print("labels", self.labels)
+        print("len labels", len(list(self.labels)))
+        print("self", self)
+        #         self.labels.discard(self.tissue_classes["Bone"])
+        #         self.labels.discard(self.tissue_classes["Cartilage"])
         self.training_dict = dict.fromkeys(list(self.labels))
-        self.probabilities = dict.fromkeys(list(self.labels), 1 / len(list(self.labels)))
+        
+        #habe ich eingebaut, weil es Bilder ohne Annotationen gab 
+        if len(list(self.labels)) > 0: 
+            self.probabilities = dict.fromkeys(list(self.labels), 1 / len(list(self.labels)))
+        else: 
+            self.probabilities = dict.fromkeys(list(self.labels), 0)
+        
         self.slide = openslide.open_slide(str(file))
         thumbnail = cv2.cvtColor(
             np.array(self.slide.read_region((0, 0), self.slide.level_count - 1, self.slide.level_dimensions[-1]))[:, :,

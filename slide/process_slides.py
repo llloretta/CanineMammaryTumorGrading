@@ -18,7 +18,7 @@ def load_slides(set, patch_size=256, label_dict=None, level = None, target_folde
     valid_files = []
     test_files = []
 
-    with open('../datasets.csv', newline='') as f:
+    with open('/home/klose/Data/datasets.csv', newline='') as f:
         reader = csv.DictReader(f, delimiter=';')
         for row in tqdm(list(reader)):
             file = glob.glob("{}/**/{}".format(str(target_folder),row["Slide"]), recursive = True)[0]
