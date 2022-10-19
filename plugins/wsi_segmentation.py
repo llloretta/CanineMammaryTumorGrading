@@ -23,13 +23,19 @@ class Plugin(SlideRunnerPlugin.SlideRunnerPlugin):
     ))
 
 
-    COLORS = [[255, 255, 255, 255], # BG
-              [0, 0, 255, 255], # Dermis
-              [0, 255, 255, 255], # Epidermis
-              [255, 0, 0, 255], # Subcutis
-              [255, 20, 147, 255], # Inflamm/Necrosis
-              [255, 128, 0, 255]] # Tumor
+#     COLORS = [[255, 255, 255, 255], # BG
+#               [0, 0, 255, 255], # Dermis
+#               [0, 255, 255, 255], # Epidermis
+#               [255, 0, 0, 255], # Subcutis
+#               [255, 20, 147, 255], # Inflamm/Necrosis
+#               [255, 128, 0, 255]] # Tumor
 
+    COLORS = [[255, 255, 255, 255], # BG
+              #[0, 0, 255, 255], # Dermis
+              #[0, 255, 255, 255], # Epidermis
+              #[255, 0, 0, 255], # Subcutis
+              [255, 20, 147, 255], # Normal
+              [255, 128, 0, 255]] # Tumor
 
 
     def __init__(self, statusQueue: Queue):

@@ -3,9 +3,10 @@ from fastai.callbacks import TrackerCallback
 
 class UpdateProbabilitiesCallback(TrackerCallback):
     def __init__(self, learn:Learner, trainslides):
-        self.iou_dict = dict.fromkeys(["background_iou" , "dermis_iou", "epidermis_iou", "subcutis_iou", "infl_nec_iou", "tumor_iou"],0)
-        self.tissue_to_iou = {0: "background_iou", 3: "dermis_iou", 4: "epidermis_iou", 5: "subcutis_iou", 6:"infl_nec_iou",
-                              7: "tumor_iou", 8: "tumor_iou",9: "tumor_iou",10: "tumor_iou",11: "tumor_iou",12: "tumor_iou",13: "tumor_iou"}
+        #angepasst 
+        self.iou_dict = dict.fromkeys(["iou", "tumor_iou", "normal_iou", "background_iou"]) #dict.fromkeys(["background_iou" , "dermis_iou", "epidermis_iou", "subcutis_iou", "infl_nec_iou", "tumor_iou"],0)
+        self.tissue_to_iou = {0:"background_iou", 1: "tumor_iou", 2: "normal_iou"} #{0: "background_iou", 3: "dermis_iou", 4: "epidermis_iou", 5: "subcutis_iou", 6:"infl_nec_iou",
+                              #7: "tumor_iou", 8: "tumor_iou",9: "tumor_iou",10: "tumor_iou",11: "tumor_iou",12: "tumor_iou",13: "tumor_iou"}
         self.trainslides = trainslides
         super().__init__(learn)
 
