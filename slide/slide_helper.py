@@ -78,6 +78,7 @@ class SlideSegmentationLabelList(ImageList, SlideImageItemList):
         super().__init__(items, **kwargs)
         self.copy_new.append('classes')
         self.classes = classes
+        print("Die Klassen sind", self.classes)
 
     def get(self, i, x: int, y: int):
         fn = self.items[i]

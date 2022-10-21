@@ -36,7 +36,12 @@ def tumor_iou(outputs: torch.Tensor, labels: torch.Tensor):
     labels_squeezed = labels.squeeze(1)
     return tensor(np.mean(jaccard_score(to_np(outputs_max.view(-1)),to_np(labels_squeezed.view(-1)), average=None, labels=[1])))
 
-def normal_iou(outputs: torch.Tensor, labels: torch.Tensor):
+# def normal_iou(outputs: torch.Tensor, labels: torch.Tensor):
+#     outputs_max = outputs.argmax(dim=1)
+#     labels_squeezed = labels.squeeze(1)
+#     return tensor(np.mean(jaccard_score(to_np(outputs_max.view(-1)),to_np(labels_squeezed.view(-1)), average=None, labels=[2])))
+
+def stroma_iou(outputs: torch.Tensor, labels: torch.Tensor):
     outputs_max = outputs.argmax(dim=1)
     labels_squeezed = labels.squeeze(1)
     return tensor(np.mean(jaccard_score(to_np(outputs_max.view(-1)),to_np(labels_squeezed.view(-1)), average=None, labels=[2])))

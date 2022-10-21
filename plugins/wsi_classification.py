@@ -26,15 +26,22 @@ class Plugin(SlideRunnerPlugin.SlideRunnerPlugin):
     ))
 
 
-    COLORS = [[0, 0, 0, 125], # Non-Neoplastic
-              [255, 128, 0, 255], # Melanoma
-              [0, 96, 0, 255], # Plasmacytoma
-              [0, 255, 0, 255], # Mast Cell Tumor
-              [0, 0, 255, 255], # PNST
-              [255, 0, 0, 255], # SCC
-              [128, 0, 255, 255], # Trichoblastoma
-              [0, 255, 255, 255], # Histiocytoma
-              [255, 255, 255, 0]] # BG
+    # COLORS = [[0, 0, 0, 125], # Non-Neoplastic
+    #           [255, 128, 0, 255], # Melanoma
+    #           [0, 96, 0, 255], # Plasmacytoma
+    #           [0, 255, 0, 255], # Mast Cell Tumor
+    #           [0, 0, 255, 255], # PNST
+    #           [255, 0, 0, 255], # SCC
+    #           [128, 0, 255, 255], # Trichoblastoma
+    #           [0, 255, 255, 255], # Histiocytoma
+    #           [255, 255, 255, 0]] # BG
+    
+    COLORS = [[255, 255, 255, 255], # BG
+              #[0, 0, 255, 255], # Dermis
+              #[0, 255, 255, 255], # Epidermis
+              #[255, 0, 0, 255], # Subcutis
+              [255, 128, 0, 255] # Tumor
+              [255, 20, 147, 255]] # Tumorstroma
 
 
     def __init__(self, statusQueue: Queue):
