@@ -35,7 +35,9 @@ class Plugin(SlideRunnerPlugin.SlideRunnerPlugin):
               #[0, 255, 255, 255], # Epidermis
               #[255, 0, 0, 255], # Subcutis
               [255, 128, 0, 255] # Tumor
-              [255, 20, 147, 255]] # Tumorstroma
+              [255, 20, 147, 255]] # Normal
+    
+    
 
 
     def __init__(self, statusQueue: Queue):
