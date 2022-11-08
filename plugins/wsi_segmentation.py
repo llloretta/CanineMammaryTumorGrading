@@ -31,11 +31,11 @@ class Plugin(SlideRunnerPlugin.SlideRunnerPlugin):
 #               [255, 128, 0, 255]] # Tumor
 
     COLORS = [[255, 255, 255, 255], # BG
-              #[0, 0, 255, 255], # Dermis
-              #[0, 255, 255, 255], # Epidermis
-              #[255, 0, 0, 255], # Subcutis
-              [255, 128, 0, 255] # Tumor
-              [255, 20, 147, 255]] # Normal
+              [106, 168, 79, 255], # Tumor (dunkelgrün)
+              [248, 202, 222, 255]] #  kein Tumor (rosa)
+            #   [255, 148, 255, 255], # Nekrose (flieder)
+            #   [109, 158, 235, 255] # Blutgefäße - frei (hellblau)
+            #   [49, 49, 247, 255]] # Blutgefäße - Metastase (dunkelblau)
     
     
 
